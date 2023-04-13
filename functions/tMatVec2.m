@@ -1,8 +1,6 @@
 function y = tMatVec2(fT,x)
 
-% prodotto matrice vettore per matrice di Toeplitz
-% senza calcolare la fft associata alla matrice 
-% T = toeplitz(a,b), che è passata come parametro fT
+% prodotto matrice di Toeplitz vettore
 % INPUT:
 % fT : trasformata di Fourier associata alla matrice Toeplitz
 % x : vettore
