@@ -1,7 +1,11 @@
 function c = StrangPrec2(a,b)
 
-% data la prima colonna e la prima riga di una matrice di Toeplitz
-% genera la prima colonna del precondizionatore circolante di Strang
+% genera precondizionatore circolante di Strang
+% INPUT:
+% a : prima colonna matrice Toeplitz T
+% b : prima riga matrice Toeplitz T
+% OUTPUT:
+% precondizionatore circolante di Strang C(T)
 
 a = a(:);
 b = b(:);

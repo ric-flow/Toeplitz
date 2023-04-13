@@ -1,10 +1,12 @@
 function y = tMatVec(a,b,x)
 
 % prodotto matrice di Toeplitz vettore
-% INPUT : 
-% a : prima colonna matrice Toeplitz
-% b : prima riga matrice Toeplitz
+% INPUT: 
+% a : prima colonna matrice Toeplitz T
+% b : prima riga matrice Toeplitz T
 % x : vettore
+% OUTPUT:
+% y : T*x
 
 a = a(:);
 b = b(:);
