@@ -10,8 +10,22 @@ function [G,B] = monomialGen(a,b,k)
 
 a = a(:);
 b = b(:);
-
 n = length(a);
+
+if k == 0
+    G = eye(n,1);
+    B = eye(n,1);
+    return
+end
+
+if k == 1
+    G = zeros(n,2);
+    G(:,1) = a;
+    G(:,2) = eye(n,1);
+    B(:,1) = eye(n,1);
+    B(:,2) = [0; b(2:n)];
+    return
+end
 
 c = [a; 0; b(n:-1:2)];
 c = fft(c);

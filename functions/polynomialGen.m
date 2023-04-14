@@ -13,6 +13,14 @@ b = b(:);
 n = length(a);
 
 k = length(p) - 1; % grado del polinomio
+
+if k == 0
+    G = zeros(n,1);
+    G(1) = p;
+    B = eye(n,1);
+    return
+end
+
 [G_aux,B] = monomialGen(a,b,k);
 
 G = p(1) * G_aux;
