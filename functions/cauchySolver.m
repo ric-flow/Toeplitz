@@ -11,6 +11,10 @@ function b = cauchySolver(x,y,R,S,b)
 % OUTPUT
 % b : soluzione sistema
 
+% problema: 
+% la funzione sembra (nella pratica) più lenta di "\"
+% nonostante l'andamento asintotico quadratico
+
 [m,n]=size(R);
 if (n>m)
   R=R.';
