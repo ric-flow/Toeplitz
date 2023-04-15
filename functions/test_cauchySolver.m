@@ -48,7 +48,7 @@
 % 
 % clear
 
-n = 2048;
+n = 8192;
 size_rhs = 16;
 % a = rand(n,1);
 % b = rand(n,1);
