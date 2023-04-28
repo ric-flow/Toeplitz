@@ -127,14 +127,14 @@ err2 = log10(err2(2:end));
 figure(3)
 plot(9:13,err1,'-*',9:13,err2,'-*')
 title('Errore relativo')
-xlabel('log_2(size)')
+xlabel('taglia matrice')
 ylabel('log_{10}(e.r.)')
 legend({'GKO','prec. gmres'})
 
 
 [~,dr] = expmT(a,b,p,q,theta,solver2);
 figure(4)
-plot(0:length(dr)-1,dr,'-o')
+plot(0:length(dr),dr,'-o')
 title('Crescita displacement rank nella fase di squaring')
 xlabel('passo di squaring')
 ylabel('displacement rank')
@@ -147,7 +147,7 @@ a_aux2 = a_aux./aux;
 b_aux2 = b_aux./aux;
 
 T = toeplitz(a_aux2(1:2000),b_aux2(1:2000));
-figure(5)
+
 plot(eig(T),'x')
 
 t1 = zeros(1,7);
@@ -181,7 +181,7 @@ t = log2(t(2:end));
 t1 = log2(t1(2:end));
 t2 = max(log2(t2(2:end)),-8);
 
-figure(6)
+figure(4)
 plot(9:13,t,'-.*',l,t1,'-.*',l,t2,'-.*')
 title('Confronto tempi di calcolo')
 xlabel('log_2(size)')
@@ -191,16 +191,16 @@ legend({'expm','GKO','prec. gmres'})
 err1 = log10(err1(2:end));
 err2 = log10(err2(2:end));
 
-figure(7)
+figure(5)
 plot(9:13,err1,'-*',9:13,err2,'-*')
 title('Errore relativo')
-xlabel('log_2(size)')
+xlabel('taglia matrice')
 ylabel('log_{10}(e.r.)')
 legend({'GKO','prec. gmres'})
 
 [~,dr] = expmT(a,b,p,q,theta,solver2);
-figure(8)
-plot(0:length(dr)-1,dr,'-o')
+figure(6)
+plot(0:length(dr),dr,'-o')
 title('Crescita displacement rank nella fase di squaring')
 xlabel('passo di squaring')
 ylabel('displacement rank')

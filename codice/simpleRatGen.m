@@ -17,7 +17,7 @@ b = b(:);
 n = length(a);
 
 if h ~= 0
-    [Gh,Bh] = polynomialGen(a,b,h);
+    [Gh,Bh] = polynomialGen(a,b,h,0);
 end
 
 % generatore fratti semplici ottimizzato sfruttando che p,q sono reali

@@ -15,10 +15,10 @@ function [A,dr] = expmT(a,b,p,q,theta,toepSolver)
 % A : matrice A = exp(T)
 % dr : vettore dei displacement rank ai vari passi di squaring
 
-n1 = norm1T(a,b);
+nor = norm1T(a,b);
 s = 0;
-while n1 > theta
-    n1 = n1/2;
+while nor > theta
+    nor = nor/2;
     s = s+1;
 end
 m = 2^s;

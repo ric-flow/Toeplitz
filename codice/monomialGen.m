@@ -1,12 +1,14 @@
-function [G,B] = monomialGen(a,b,k)
+function [G,B] = monomialGen(a,b,k,opt)
 
 % calcola un generatore Stein per T^k
 % INPUT:
 % a : prima colonna di T
 % b : prima riga di T
 % k : grado del monomio T^k
+% opt : opzioni 0/1
 % OUTPUT:
-% [G,B] : generatore per T^k
+% [G,B] : generatore per T^k, se opt==0
+% [G,B] : (I-Z)[G,B] generatore per T^k, se opt==1
 
 a = a(:);
 b = b(:);
@@ -68,6 +70,10 @@ B(:,2*k-3) = b_aux + a_aux;
 
 for j = (2*k-4):(-1):(1)
     B(:,j) = tMatVec2(c,B(:,j+2));
+end
+
+if opt == 1
+    return
 end
 
 G = idMinusZ(G);

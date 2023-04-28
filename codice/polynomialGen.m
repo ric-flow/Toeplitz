@@ -1,12 +1,14 @@
-function [G,B] = polynomialGen(a,b,p)
+function [G,B] = polynomialGen(a,b,p,opt)
 
 % calcola un generatore Stein per p(T)
 % INPUT:
 % a : prima colonna di T
 % b : prima riga di T
 % p : polinomio
+% opt : opzioni 0/1
 % OUTPUT:
-% [G,B] : generatore per p(T)
+% [G,B] : generatore per p(T), se opt==0
+% [G,B] : (I-Z)[G,B] generatore per p(T), se opt==1
 
 a = a(:);
 b = b(:);
@@ -21,7 +23,7 @@ if k == 0
     return
 end
 
-[G_aux,B] = monomialGen(a,b,k);
+[G_aux,B] = monomialGen(a,b,k,opt);
 
 G = p(1) * G_aux;
 
